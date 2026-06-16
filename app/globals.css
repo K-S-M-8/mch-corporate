@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #000000;     /* True pure black background */
+  --color-onyx: #0B0C10;         /* Premium structural card panels */
+  --color-platinum: #F5F5F7;     /* High-end off-white font scale */
+  --color-gold-premium: #C5A059; /* Burnished MCH asset gold */
+  --color-gold-dark: #9A7B3E;
+
+  --tracking-tighter: -0.022em;  /* Signature compressed Apple header tracking */
+  --tracking-tight: -0.011em;
+}
+
+:root {
+  background-color: var(--color-obsidian);
+  color: var(--color-platinum);
+  color-scheme: dark;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
