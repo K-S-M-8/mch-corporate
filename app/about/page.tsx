@@ -13,7 +13,7 @@ export default function AboutPage() {
       {/* Corporate Manifesto Title Header */}
       <section className="pt-44 pb-12 px-6 max-w-6xl mx-auto border-b border-neutral-900/60">
         <p className="text-gold-premium text-xs font-semibold uppercase tracking-[0.3em] mb-3">
-          Our Mandate & Strategic Legacy
+          Our Mandate &amp; Strategic Legacy
         </p>
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tighter text-platinum mb-4 max-w-4xl">
           Architecting a Unified Future, From Africa to the World
@@ -35,10 +35,10 @@ export default function AboutPage() {
         </div>
         <div className="md:col-span-2 space-y-6 text-sm text-neutral-400 leading-relaxed font-sans max-w-3xl">
           <p>
-            We achieve global impact by strategically owning and investing in eight diverse subsidiaries, each operating across primary, secondary, and tertiary sectors. Our mission is to leverage the unparalleled synergies across this comprehensive portfolio to address humanity&apos;s most pressing challenges, accelerate industrial advancement, and ultimately, forge a better, more unified world for all.
+            MCH does not operate as a passive investment trust. We serve as an active parent directorate executing strict treasury controls, risk mitigation protocols, and cross-vertical synergy loops. By engineering proprietary technology architectures inside our advanced research arms—such as custom restaurant OS networks, automated handheld ordering engines, and predictive analytics platforms—we deploy functional optimization pipelines directly into our physical property development, heavy industrial logistics, and high-yield agricultural assets.
           </p>
           <p className="border-l border-gold-premium/40 pl-4 italic text-neutral-300">
-            &quot;This is more than a business venture; it&apos;s a beacon of hope, inspiring collective potential that transcends geographical boundaries.&quot;
+            &quot;This is more than a business venture; it&apos;s an institutional anchor designed to withstand cyclical market adjustments while fostering global cohesion.&quot;
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function AboutPage() {
       <section className="py-20 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-neutral-900/30">
         <div>
           <h2 className="text-xs uppercase font-semibold tracking-[0.2em] text-gold-premium">
-            Vision & Mission
+            Vision &amp; Mission
           </h2>
           <p className="text-xs text-neutral-500 tracking-wide mt-1 font-mono">
             Enterprise Pillars
@@ -58,7 +58,7 @@ export default function AboutPage() {
           <div className="space-y-3">
             <h3 className="text-xl font-medium tracking-tight text-platinum">The Vision Statement</h3>
             <p className="text-sm text-neutral-400 leading-relaxed font-sans">
-              To be the leading catalyst for global transformation, inspiring an era of unprecedented progress, unity, and shared prosperity by pioneering integrated solutions that emerge from Africa and serve humanity worldwide.
+              To be the leading catalyst for global transformation, inspiring an era of unprecedented progress, structural stability, and shared prosperity by pioneering integrated solutions that emerge from our headquarters in {CORPORATE_IDENTITY.globalHeadquarters} and scale to serve humanity worldwide.
             </p>
           </div>
           
@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="space-y-3">
             <h3 className="text-xl font-medium tracking-tight text-platinum">The Mission Statement</h3>
             <p className="text-sm text-neutral-400 leading-relaxed font-sans">
-              Through strategic ownership and the fostering of unique inter-group synergies, we enable our entities to deliver innovative, integrated, and impactful solutions that first address Africa&apos;s grand challenges, creating widespread opportunities and systematically elevating the continent&apos;s standing, with the ultimate goal of leveraging this proven expertise to foster global well-being and progress. We are guided by ethical leadership and a profound commitment to sustainable impact.
+              Through absolute asset ownership and the total elimination of subsidiary isolation, we empower our entities to deliver high-impact, integrated solutions that address humanity&apos;s grand challenges. We operate with strict adherence to CIPC regulatory standards, international corporate transparency, and the ethical parameters defined by King IV corporate leadership guidelines, protecting foundational equity for generational longevity.
             </p>
           </div>
         </div>
