@@ -5,12 +5,22 @@ import { motion } from 'framer-motion';
 
 export default function MandatePortal() {
   const [formState, setFormState] = useState({ name: '', email: '', sector: 'general', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Front-end state shift to mimic secure transmission verification
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      // Simulating secure transactional handling delay before state resolution
+      await new Promise((resolve) => setTimeout(resolve, 1400));
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Transmission error:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,10 +58,11 @@ export default function MandatePortal() {
                   <input 
                     type="text" 
                     required
-                    placeholder="John Doe / Institution Name"
+                    disabled={isSubmitting}
+                    placeholder="Principal Name / Institution"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum placeholder-neutral-700 focus:outline-none focus:border-gold-premium/50 transition-colors w-full"
+                    className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum placeholder-neutral-700 focus:outline-none focus:border-gold-premium/50 transition-colors w-full disabled:opacity-50"
                   />
                 </div>
 
@@ -61,10 +72,11 @@ export default function MandatePortal() {
                   <input 
                     type="email" 
                     required
-                    placeholder="name@institution.com"
+                    disabled={isSubmitting}
+                    placeholder="name@institution.co.za"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum placeholder-neutral-700 focus:outline-none focus:border-gold-premium/50 transition-colors w-full"
+                    className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum placeholder-neutral-700 focus:outline-none focus:border-gold-premium/50 transition-colors w-full disabled:opacity-50"
                   />
                 </div>
               </div>
@@ -74,18 +86,19 @@ export default function MandatePortal() {
                 <label className="text-[10px] uppercase tracking-widest text-neutral-500 font-medium">Target Allocation Sector</label>
                 <select 
                   value={formState.sector}
+                  disabled={isSubmitting}
                   onChange={(e) => setFormState({ ...formState, sector: e.target.value })}
-                  className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum focus:outline-none focus:border-gold-premium/50 transition-colors w-full appearance-none cursor-pointer"
+                  className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum focus:outline-none focus:border-gold-premium/50 transition-colors w-full cursor-pointer disabled:opacity-50"
                 >
                   <option value="general">General Executive Counsel</option>
-                  <option value="construction">Division 01 // Construction & Infrastructure</option>
-                  <option value="banking">Division 02 // Investment & Banking</option>
-                  <option value="agriculture">Division 03 // Agricultural Systems</option>
-                  <option value="logistics">Division 04 // Logistics & Transport</option>
-                  <option value="property">Division 05 // Commercial Property</option>
-                  <option value="security">Division 06 // Security & Asset Protection</option>
-                  <option value="tech">Division 07 // LADNU Software R&D</option>
-                  <option value="healthcare">Division 08 // Healthcare & Technology</option>
+                  <option value="tech">Pillar 01 // LADNU Software R&D &amp; AI Systems</option>
+                  <option value="corporate-services">Pillar 02 // MALAD Enterprise Solutions</option>
+                  <option value="real-estate">Pillar 03 // ALAMO Property &amp; Architecture</option>
+                  <option value="capital-markets">Pillar 04 // LADNUM Capital Quantitative Desk</option>
+                  <option value="logistics">Pillar 05 // MCH Logistics &amp; Supply Chain</option>
+                  <option value="energy">Pillar 06 // MCH Industrial Energy Systems</option>
+                  <option value="venture-capital">Pillar 07 // MCH Strategic Capital Ventures</option>
+                  <option value="compliance-advisory">Pillar 08 // MCH Sovereign Risk Advisory</option>
                 </select>
               </div>
 
@@ -95,10 +108,11 @@ export default function MandatePortal() {
                 <textarea 
                   rows={4}
                   required
+                  disabled={isSubmitting}
                   placeholder="Outline parameters of your venture submission or corporate inquiry..."
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum placeholder-neutral-700 focus:outline-none focus:border-gold-premium/50 transition-colors w-full resize-none"
+                  className="bg-black/40 border border-neutral-900 rounded-xl px-4 py-3 text-sm text-platinum placeholder-neutral-700 focus:outline-none focus:border-gold-premium/50 transition-colors w-full resize-none disabled:opacity-50"
                 />
               </div>
 
@@ -106,15 +120,15 @@ export default function MandatePortal() {
               <div className="pt-2">
                 <button 
                   type="submit"
-                  className="w-full bg-platinum text-obsidian rounded-xl py-3 text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors cursor-pointer"
+                  disabled={isSubmitting}
+                  className="w-full bg-platinum text-obsidian rounded-xl py-3 text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-colors cursor-pointer disabled:bg-neutral-800 disabled:text-neutral-500 disabled:cursor-not-allowed"
                 >
-                  Transmit Mandated Request
+                  {isSubmitting ? "Transmitting Secure Channel Data..." : "Transmit Mandated Request"}
                 </button>
               </div>
 
             </form>
           ) : (
-            // Animated Success Vault Screen
             <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}

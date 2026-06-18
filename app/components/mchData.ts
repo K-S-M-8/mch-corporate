@@ -55,8 +55,8 @@ export const SUBSIDIARIES: Subsidiary[] = [
     sector: "Tertiary",
     industry: "Advanced Technology Services & R&D",
     tagline: "Our Strategic Innovation Asset",
-    description: "Dedicated to pioneering proprietary, cutting-edge AI, machine learning, robotics, biometrics, and IoT solutions. Its advanced research forms a vital strategic capability integrated across the entire holding portfolio, enabling every group entity to lead its respective market sector.",
-    coreCapabilities: ["Artificial Intelligence & Machine Learning", "Robotics & Automation Engineering", "Biometrics & IoT Implementations", "Proprietary Intellectual Property Cultivation"],
+    description: "Dedicated to pioneering proprietary, cutting-edge AI, machine learning, robotics, biometrics, and IoT solutions. Its advanced research forms a vital strategic capability integrated across the entire holding portfolio, powering high-performance restaurant OS setups, automated checkout environments, and real-time handheld ordering frameworks.",
+    coreCapabilities: ["Artificial Intelligence & Machine Learning", "Handheld Ordering Engines & Restaurant OS", "Biometrics & IoT Implementations", "Proprietary Intellectual Property Cultivation"],
     route: "/subsidiaries#ladnu"
   },
   {
@@ -75,8 +75,8 @@ export const SUBSIDIARIES: Subsidiary[] = [
     sector: "Tertiary",
     industry: "Real Estate & Intelligent Spaces",
     tagline: "The Architects of Intelligent Living",
-    description: "Redefining urban and rural property development by focusing on highly sustainable, secure, and future-proof environments. Building smart communities designed for superior quality of life as scalable blueprints for sustainable global living.",
-    coreCapabilities: ["Sustainable Urban & Rural Master Planning", "Future-Proof Secure Property Portfolios", "Smart Community Infrastructure", "Eco-Conscious Land Development"],
+    description: "Redefining urban and rural property development by focusing on highly sustainable, secure, and future-proof environments. Building luxury residential spaces and smart communities engineered with high-end, minimalist architectural design philosophies.",
+    coreCapabilities: ["Minimalist Architectural Master Planning", "Future-Proof Secure Property Portfolios", "Smart Community Infrastructure", "Luxury Commercial Space Development"],
     route: "/subsidiaries#omaladnum"
   },
   {
@@ -134,7 +134,7 @@ export const SUBSIDIARIES: Subsidiary[] = [
 export const corporateGovernance = {
   director: "Keletso Shaun Mundalamo",
   companyName: "Mundalamo Corporate Holdings (Pty) Ltd",
-  shortName: "Mundalamo Holdings", // <-- Add this line
+  shortName: "Mundalamo Holdings",
   registrationNumber: "2025/089777/07",
   mandate: "Cultivating institutional legacies through highly diversified operational units, absolute regulatory compliance, and generational asset expansion."
 };
@@ -144,13 +144,22 @@ export interface GovernancePrinciple {
   text: string;
 }
 
+// Upgraded with detailed structural synergy text & strict King IV transparency
 export const GOVERNANCE_PRINCIPLES: GovernancePrinciple[] = [
   {
     title: "Absolute Operational Integrity",
-    text: "We execute strict risk mitigation protocols across both our quantitative capital operations and our software engineering pipelines, ensuring all intellectual property and systematic assets remain highly secure."
+    text: "We execute strict risk mitigation protocols across both our quantitative capital operations and our software engineering pipelines, ensuring all intellectual property, data structures, and systematic assets remain highly secure."
   },
   {
-    title: "Regulatory & Statutory Compliance",
-    text: "Maintaining strict alignment with the Companies and Intellectual Property Commission (CIPC) of South Africa and modeling our quantitative frameworks around international institutional standards."
+    title: "King IV Fiduciary Compliance",
+    text: "Maintaining strict alignment with the Companies and Intellectual Property Commission (CIPC) of South Africa and systematically implementing the mindfulness and ethical parameters defined by King IV corporate leadership guidelines."
+  },
+  {
+    title: "Intra-Group Synergy & Shared Value",
+    text: "Eliminating entity isolation completely. Advanced technology architectures, operational research, and code libraries engineered by our technology wing (LADNU) scale laterally to optimize asset performance across our physical logistics and property divisions."
+  },
+  {
+    title: "Centralized Financial Controls",
+    text: "The parent board enforces strict authority over treasury deployment, capital validation thresholds, and private funding channels, protecting overall portfolio equity from cyclical market exposure."
   }
 ];
