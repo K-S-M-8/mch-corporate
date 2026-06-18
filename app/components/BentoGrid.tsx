@@ -1,28 +1,30 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { mchSubsidiaries } from './mchData';
+import { motion, Variants } from 'framer-motion';
+import { SUBSIDIARIES, Subsidiary } from './mchData';
 
 export default function BentoGrid() {
-  // Stagger animation rules for the parent grid layout container
-  const containerVariants = {
+  // Explicitly typing variants as Variants forces strict configuration alignment
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08, // Time delay between each consecutive card entry
+        staggerChildren: 0.08,
       }
     }
   };
 
-  // Entry animation parameters for individual cards
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+      transition: { 
+        duration: 0.7, 
+        ease: [0.16, 1, 0.3, 1] // Safely matches easing signature now
+      }
     }
   };
 
@@ -48,13 +50,18 @@ export default function BentoGrid() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }} // Triggers reveal when grid enters view frame
+          viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           
-          {mchSubsidiaries.map((sub) => {
-            const isLadnu = sub.id === 'ladnu-tech';
+          {SUBSIDIARIES.map((sub: Subsidiary, index: number) => {
+            const isLadnu = sub.id === 'ladnu-tech' || sub.id === 'ladnu';
             
+            // Safe alignment mapping back to structural data keys
+            const displayNum = `0${index + 1}.`;
+            const displaySector = sub.sector || "Industrial Operations";
+            const displayStatus = "Active Operational Cluster";
+
             return (
               <motion.div 
                 key={sub.id}
@@ -66,18 +73,20 @@ export default function BentoGrid() {
               >
                 <div>
                   <div className="flex items-center justify-between border-b border-neutral-900/40 pb-3 mb-4">
-                    <span className="text-[10px] font-mono tracking-widest text-neutral-500 font-medium">{sub.divisionNum}</span>
+                    <span className="text-[10px] font-mono tracking-widest text-neutral-500 font-medium">
+                      {displayNum}
+                    </span>
                     <span className={`text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded border ${
                       isLadnu 
                         ? 'text-gold-premium bg-gold-premium/5 border-gold-premium/20' 
                         : 'text-neutral-600 bg-black/30 border-neutral-900/50'
                     }`}>
-                      {sub.status}
+                      {displayStatus}
                     </span>
                   </div>
                   
                   <div className="text-[10px] text-gold-premium tracking-wider uppercase font-semibold mb-1">
-                    {sub.category}
+                    {displaySector}
                   </div>
                   
                   <h3 className="text-2xl font-semibold tracking-tighter text-platinum mb-2 group-hover:text-gold-premium transition-colors">

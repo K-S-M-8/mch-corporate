@@ -31,7 +31,7 @@ export default function Hero() {
           A diversified South African private enterprise holding structure. Architecting elite digital frameworks, systemic market liquidities, and physical regional infrastructure.
         </motion.p>
         
-        {/* Interaction Link Matrix Reveal */}
+        {/* Interaction Link Matrix Reveal - Corrected Hyperlink Routing */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export default function Hero() {
             Explore the 8 Pillars 
             <span className="ml-1 text-xs transform group-hover:translate-x-0.5 transition-transform">➔</span>
           </a>
-          <a href="#matrix" className="text-neutral-400 hover:text-platinum hover:underline inline-flex items-center group transition-all">
+          <a href="#governance-framework" className="text-neutral-400 hover:text-platinum hover:underline inline-flex items-center group transition-all">
             Governance Framework 
             <span className="ml-1 text-xs transform group-hover:translate-x-0.5 transition-transform">➔</span>
           </a>
